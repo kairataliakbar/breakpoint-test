@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="container">
-      <Button @click="onOpenModal">Auth</Button>
+      <Button @click="onOpenModal" icon-name="profile">Auth</Button>
 
       <Like>12</Like>
 

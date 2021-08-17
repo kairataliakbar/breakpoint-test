@@ -29,7 +29,7 @@ button {
   background-color: $c-main;
   border: none;
   border-radius: 10px;
-  padding: 0 25px;
+  padding: 0 16px;
   margin: 0;
   transition: all 80ms ease-in;
   text-decoration: none;
