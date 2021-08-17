@@ -6,11 +6,15 @@
       <Like>12</Like>
 
       <Dislike>10</Dislike>
+
+      <ModalAuth v-if="modalShow" :show="modalShow" @close="onCloseModal" />
     </div>
   </main>
 </template>
 
 <script>
+import ModalAuth from '../organisms/ModalAuth.vue'
+
 import Button from '../atoms/Button.vue'
 import Like from '../atoms/Like.vue'
 import Dislike from '../atoms/Dislike.vue'
@@ -20,11 +24,20 @@ export default {
   components: {
     Button,
     Like,
-    Dislike
+    Dislike,
+    ModalAuth,
+  },
+  data() {
+    return {
+      modalShow: false,
+    }
   },
   methods: {
     onOpenModal() {
-      console.log('open modal')
+      this.modalShow = true
+    },
+    onCloseModal() {
+      this.modalShow = false
     },
   },
 }
