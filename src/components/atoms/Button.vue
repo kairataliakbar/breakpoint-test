@@ -40,7 +40,7 @@ button {
   white-space: nowrap;
 
   &:hover {
-    opacity: 0.7;
+    background-color: #5b86d0;
   }
 
   &:active {

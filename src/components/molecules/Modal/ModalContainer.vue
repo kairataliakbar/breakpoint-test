@@ -20,13 +20,11 @@ export default {
 .modal-container {
   background: #fff;
   box-shadow: 0 0 30px rgba(53, 56, 161, 0.07);
-  border-radius: 15px;
+  border-radius: 10px;
   z-index: 600;
   position: relative;
-  padding: 16px;
   animation: animModal 0.4s cubic-bezier(0.11, 0.72, 0.56, 1.28);
-
-  @media (max-width: 780px) {
+  @media (max-width: 1000px) {
     margin: 60px auto;
   }
 }
