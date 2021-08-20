@@ -1,9 +1,9 @@
 <template>
-  <label>
+  <label :class="[error && 'error']">
     <p class="input-label">{{ label }}</p>
 
     <div :class="['wrapper-input', error && 'error']">
-      <input v-model="model" :type="type" />
+      <input v-model="model" :type="type" @blur="$emit('blur')" />
     </div>
 
     <p v-if="error" class="error">{{ error }}</p>
@@ -87,6 +87,11 @@ label {
       }
     }
   }
+
+  &.error {
+    margin-bottom: 10px;
+  }
+
   .error {
     font-family: Arial;
     font-size: 12px;

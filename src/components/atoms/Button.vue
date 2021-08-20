@@ -1,18 +1,28 @@
 <template>
   <button @click="$emit('click')">
     <i v-if="iconName" :class="iconName"></i>
+    <Loader v-if="isLoading" class="loading" />
     <slot></slot>
   </button>
 </template>
 
 <script>
+import Loader from './Loader.vue'
+
 export default {
   name: 'Button',
+  components: {
+    Loader,
+  },
   props: {
     iconName: {
       type: String,
       default: '',
-    }
+    },
+    isLoading: {
+      type: Boolean,
+      default: false,
+    },
   },
 }
 </script>
@@ -51,6 +61,10 @@ button {
     width: 36px;
     height: 36px;
     margin-right: 15px;
+  }
+
+  .loading {
+    margin-right: 10px;
   }
 
   .profile {

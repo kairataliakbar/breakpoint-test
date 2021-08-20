@@ -3,9 +3,9 @@
     <div class="container">
       <Button @click="onOpenModal" icon-name="profile">Auth</Button>
 
-      <Like>12</Like>
+      <Like>{{ success }}</Like>
 
-      <Dislike>10</Dislike>
+      <Dislike>{{ fails }}</Dislike>
 
       <ModalAuth v-if="modalShow" :show="modalShow" @close="onCloseModal" />
     </div>
@@ -31,6 +31,14 @@ export default {
     return {
       modalShow: false,
     }
+  },
+  computed: {
+    success() {
+      return localStorage.getItem('success') || 0
+    },
+    fails() {
+      return localStorage.getItem('fails') || 0
+    },
   },
   methods: {
     onOpenModal() {
