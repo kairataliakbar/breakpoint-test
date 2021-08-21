@@ -10,7 +10,7 @@
       </div>
 
       <div class="auth-modal__content">
-        <AuthForm />
+        <AuthForm @on-submit="$emit('on-submit')" />
 
         <div class="auth-modal__links">
           <a href="#">Forgot password?</a>
@@ -53,18 +53,9 @@ $c-main: #5988d9;
 .auth-modal {
   display: flex;
   flex-direction: row;
-  width: 750px;
-  height: 364px;
-  overflow: hidden;
 
-  @media (max-width: 1000px) {
-    width: 70%;
-    height: 364px;
-  }
   @media (max-width: 560px) {
     flex-direction: column;
-    width: 80%;
-    height: 529px;
   }
 
   > button {

@@ -78,6 +78,7 @@ export default {
       if (user) {
         if (user.password === this.password) {
           this.$store.dispatch('incrementSuccess')
+          this.$emit('on-submit')
         } else {
           this.$store.dispatch('incrementFails')
           this.errorPassword = 'Wrong password'
