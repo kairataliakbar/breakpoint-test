@@ -26,9 +26,10 @@
 <script>
 import AuthForm from '../organisms/AuthForm.vue'
 
-import ModalWrapper from '../molecules/Modal/ModalWrapper'
-import ModalContainer from '../molecules/Modal/ModalContainer'
-import ModalMask from '../molecules/Modal/ModalMask'
+import ModalWrapper from '../molecules/ModalWrapper'
+import ModalContainer from '../molecules/ModalContainer'
+
+import ModalMask from '../atoms/ModalMask'
 
 export default {
   name: 'ModalAuth',
