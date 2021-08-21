@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 import ModalAuth from '../organisms/ModalAuth.vue'
 
 import Button from '../atoms/Button.vue'
@@ -33,12 +35,10 @@ export default {
     }
   },
   computed: {
-    success() {
-      return localStorage.getItem('success') || 0
-    },
-    fails() {
-      return localStorage.getItem('fails') || 0
-    },
+    ...mapGetters({
+      success: 'getSuccess',
+      fails: 'getFails',
+    }),
   },
   methods: {
     onOpenModal() {

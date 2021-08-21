@@ -4,18 +4,18 @@
       <button @click="$emit('close')">
         <i></i>
       </button>
+
       <div class="auth-modal__image">
         <img src="../../assets/svg/profile.svg" alt="auth" />
       </div>
-      <div class="auth-modal__content">
-        <div class="auth-modal__inner">
-          <AuthForm />
 
-          <div class="auth-modal__links">
-            <a href="#">Forgot password?</a>
-            <i></i>
-            <a href="#">User registration</a>
-          </div>
+      <div class="auth-modal__content">
+        <AuthForm />
+
+        <div class="auth-modal__links">
+          <a href="#">Forgot password?</a>
+          <i></i>
+          <a href="#">User registration</a>
         </div>
       </div>
     </ModalContainer>
@@ -56,6 +56,7 @@ $c-main: #5988d9;
   width: 750px;
   height: 364px;
   overflow: hidden;
+
   @media (max-width: 1000px) {
     width: 70%;
     height: 364px;
@@ -129,14 +130,9 @@ $c-main: #5988d9;
 
   &__content {
     display: flex;
-    flex: 1;
-  }
-
-  &__inner {
+    flex-direction: column;
     flex: 1;
     padding: 50px 20px 24px;
-    display: flex;
-    flex-direction: column;
     @media (max-width: 560px) {
       padding-top: 22px;
     }

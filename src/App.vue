@@ -10,6 +10,10 @@ export default {
   components: {
     MainTemplate,
   },
+  mounted() {
+    this.$store.dispatch('fetchSuccess')
+    this.$store.dispatch('fetchFails')
+  },
 }
 </script>
 

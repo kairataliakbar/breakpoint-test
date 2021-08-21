@@ -70,14 +70,6 @@ export default {
     checkPassword() {
       this.errorPassword = this.password ? '' : 'This field is required'
     },
-    onIncrementResult(result) {
-      const total = localStorage.getItem(result)
-      if (total) {
-        localStorage.setItem(result, total + 1)
-      } else {
-        localStorage.setItem(result, 1)
-      }
-    },
     onSubmit() {
       this.loading = true
 
@@ -85,14 +77,14 @@ export default {
 
       if (user) {
         if (user.password === this.password) {
-          this.onIncrementResult('success')
+          this.$store.dispatch('incrementSuccess')
         } else {
+          this.$store.dispatch('incrementFails')
           this.errorPassword = 'Wrong password'
-          this.onIncrementResult('fails')
         }
       } else {
+        this.$store.dispatch('incrementFails')
         this.errorEmail = 'Not valid E-mail address'
-        this.onIncrementResult('fails')
       }
 
       this.loading = false

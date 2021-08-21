@@ -48,6 +48,7 @@ button {
   align-items: center;
   justify-content: center;
   white-space: nowrap;
+  cursor: pointer;
 
   &:hover {
     background-color: #5b86d0;
