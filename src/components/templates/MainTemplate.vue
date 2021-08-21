@@ -1,11 +1,11 @@
 <template>
   <main>
     <div class="container">
-      <Button @click="onOpenAuthModal" icon-name="profile">Auth</Button>
+      <Button @click="onOpenAuthModal" icon-name="profile" class="margin">Auth</Button>
 
-      <Like>{{ success }}</Like>
+      <Like class="margin">{{ success }}</Like>
 
-      <Dislike>{{ fails }}</Dislike>
+      <Dislike class="margin">{{ fails }}</Dislike>
 
       <ModalAuth
         v-if="authModalShow"
@@ -90,6 +90,16 @@ main {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+
+    @media (max-width: 560px) {
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  .margin {
+    margin-bottom: 20px;
   }
 }
 </style>
